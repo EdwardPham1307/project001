@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.803470443266">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.9.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Loop ch&#237;nh - THẾ GIỚI MAGITECH</title>
+    <meta name="title" content="Loop chính - THẾ GIỚI MAGITECH">
+    <meta name="description" content="Khám phá → Học rune → Giao tiếp node → Ghi đè hoặc tái cấu trúc → Gây phản ứng hệ thống → Mở vùng mới / Chiến tuyến mới">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="/gameplay/core-gameplay-loop/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/gameplay/core-gameplay-loop/">
+    <meta property="og:title" content="Loop chính - THẾ GIỚI MAGITECH">
+    <meta property="og:description" content="Khám phá → Học rune → Giao tiếp node → Ghi đè hoặc tái cấu trúc → Gây phản ứng hệ thống → Mở vùng mới / Chiến tuyến mới">
+    <meta property="og:image" content="/tong-quan-gameplay/static/core-gameplay-loop-img1.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/gameplay/core-gameplay-loop/">
+    <meta property="twitter:title" content="Loop chính - THẾ GIỚI MAGITECH">
+    <meta property="twitter:description" content="Khám phá → Học rune → Giao tiếp node → Ghi đè hoặc tái cấu trúc → Gây phản ứng hệ thống → Mở vùng mới / Chiến tuyến mới">
+    <meta property="twitter:image" content="/tong-quan-gameplay/static/core-gameplay-loop-img1.webp">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../../resources/css/retype.css?v=3.9.0.803470443266" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.803470443266" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.803470443266" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">THẾ GIỚI MAGITECH</span>
+                        </a><span class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-white border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="-core-gameplay-loop--magitech" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-core-gameplay-loop--magitech">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F3AE;</span> Core Gameplay Loop – MAGITECH</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="cốt-lõi-vòng-lặp">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cốt-lõi-vòng-lặp">#</doc-anchor-trigger>
+        <span>Cốt lõi vòng lặp</span>
+    </h2>
+</doc-anchor-target>
+<blockquote>
+<p>Khám phá → Học rune → Giao tiếp node → Ghi đè hoặc tái cấu trúc → Gây phản ứng hệ thống → Mở vùng mới / Chiến tuyến mới</p>
+</blockquote>
+<doc-panel id="1-khởi-đầu--khám-phá" collapsed>
+    <template #title><strong>1. Khởi đầu &amp; Khám phá</strong></template>
+<doc-anchor-target id="khởi-đầu--khám-phá">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#khởi-đầu--khám-phá">#</doc-anchor-trigger>
+        <span>Khởi đầu &amp; Khám phá</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="bối-cảnh-mở-đầu">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bối-cảnh-mở-đầu">#</doc-anchor-trigger>
+        <span>Bối cảnh mở đầu</span>
+    </h3>
+</doc-anchor-target>
+<p>Người chơi tỉnh dậy trong một không gian vỡ vụn, bị ngắt khỏi mọi hệ thống phép thuật – <strong>Fractured Node</strong>, một khu vực “lỗi hệ thống” nằm ngoài quyền kiểm soát của Ethermind.<br />
+Không HUD, không ký ức, không thông tin. Trên tay là một <strong>Rune Nguyên Thủy chưa từng ghi nhận trong bất kỳ logic phép thuật nào</strong> – và một tiếng thì thầm lặp đi lặp lại vang lên:</p>
+<blockquote>
+<p><em>“Câu lệnh không thuộc về hệ thống nào cả...”</em></p>
+</blockquote>
+<doc-anchor-target id="mục-tiêu-gameplay-của-giai-đoạn">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mục-tiêu-gameplay-của-giai-đoạn">#</doc-anchor-trigger>
+        <span>Mục tiêu gameplay của giai đoạn</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Kích thích trí tò mò</strong> bằng cơ chế phi tuyến, không hướng dẫn trực tiếp.</li>
+<li><strong>Dạy người chơi cơ chế phép thuật (rune)</strong> thông qua <strong>tương tác môi trường</strong>.</li>
+<li>Xây dựng cảm giác &quot;<strong>bạn không thuộc về hệ thống, nhưng có thể viết lại nó.</strong>&quot;</li>
+</ul>
+<doc-anchor-target id="các-hoạt-động-chính">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#các-hoạt-động-chính">#</doc-anchor-trigger>
+        <span>Các hoạt động chính</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Tìm dấu rune trong thế giới thực thể</strong></li>
+</ol>
+<ul>
+<li>Rune không nằm trong UI – chúng là thực thể bán sống xuất hiện trong môi trường:
+<ul>
+<li>Các khối năng lượng xoắn, glyph phát sáng theo nhịp tim Ether.</li>
+<li>Có thể nằm trên bề mặt, trôi lơ lửng trong không khí, hoặc &quot;ẩn&quot; và chỉ hiện ra khi môi trường bị biến đổi (xoay góc nhìn, thay đổi thời gian).</li>
+</ul>
+</li>
+<li><strong>Rune Nguyên Thủy</strong> đóng vai trò như một <strong>cảm ứng Ether</strong>: khi lại gần rune, nó rung nhẹ, hiển thị ánh sáng phản ứng và <strong>dịch tạm thời một phần rune</strong> (ví dụ: <code v-pre>TRIGGER</code> của phép).</li>
+</ul>
+<ol start="2">
+<li><strong>Tương tác – thử sai – mở khóa tri thức rune</strong></li>
+</ol>
+<ul>
+<li>Người chơi không &quot;học&quot; rune bằng cách click, mà thông qua:
+<ul>
+<li><strong>Quan sát môi trường phản hồi</strong> (vật thể biến đổi khi rune hoạt động).</li>
+<li><strong>Tái hiện điều kiện gây kích hoạt rune</strong>(ví dụ: đứng yên trong sương Ether → rune tự sáng → hiểu rằng nó phản ứng với tĩnh lặng).</li>
+<li><strong>Ghi nhớ hình dạng ánh sáng – đối chiếu với các mẫu rune tiếp theo.</strong></li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>Thu thập dữ liệu phép lỗi – mở khóa lớp thực tại</strong></li>
+</ol>
+<ul>
+<li>Các khu vực nhỏ chứa:
+<ul>
+<li><strong>Fractured Glyphs</strong>: Rune vỡ – hiển thị như đoạn mã phép lỗi.</li>
+<li><strong>Echo Memory</strong>: hình ảnh quá khứ còn sót lại, chỉ tái hiện được bằng rune đúng ngữ cảnh.</li>
+<li><strong>Dream-Tag</strong>: cảm xúc bị đóng băng – rune sẽ biến đổi theo cảm xúc người chơi khi chạm vào.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="cơ-chế-gameplay-hỗ-trợ">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cơ-chế-gameplay-hỗ-trợ">#</doc-anchor-trigger>
+        <span>Cơ chế gameplay hỗ trợ</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Hệ thống</strong></th>
+<th style="text-align: left;"><strong>Mô tả</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Rune Perception</td>
+<td style="text-align: left;">Cho phép Rune Nguyên Thủy “dịch” một phần rune khi tương tác vật thể hoặc âm thanh Ether.</td>
+</tr>
+<tr>
+<td style="text-align: left;">World Pulse</td>
+<td style="text-align: left;">Khi người chơi bước vào vùng có ý nghĩa rune mạnh, thế giới rung nhẹ – feedback xúc giác và thị giác.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Memory Echo Chamber</td>
+<td style="text-align: left;">Căn phòng chỉ mở khi rune được kích hoạt đúng – đóng vai trò tutorial ngầm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">No HUD Zone</td>
+<td style="text-align: left;">Không có thanh máu, không hướng – chỉ Rune Nguyên Thủy phát sáng từng bước để dẫn đường.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="trải-nghiệm--cảm-xúc-mong-muốn">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#trải-nghiệm--cảm-xúc-mong-muốn">#</doc-anchor-trigger>
+        <span>Trải nghiệm &amp; cảm xúc mong muốn</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Hoang mang có chủ đích – người chơi cảm thấy mình là dị thể.</li>
+<li>Khám phá bằng giác quan – không chỉ quan sát mà phải nghe, chạm, cảm nhận.</li>
+<li>Hình thành tư duy logic phép thuật mà không cần bảng hướng dẫn.</li>
+</ul>
+<blockquote>
+<p><em>“Bạn không được dạy phép thuật. Bạn buộc phải đối thoại với nó.”</em></p>
+</blockquote>
+</doc-panel>
+<doc-panel id="2-học--tổ-hợp-rune" collapsed>
+    <template #title><strong>2. Học &amp; Tổ Hợp Rune</strong></template>
+<doc-anchor-target id="thu-thập--học-rune">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#thu-thập--học-rune">#</doc-anchor-trigger>
+        <span>Thu thập &amp; Học rune</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Mỗi kỹ năng người chơi tạo ra sẽ được cấu thành từ 3 phần:</strong><br />
+<span class="docs-emoji">&#x1F9E9;</span> <strong>Trigger</strong> → <span class="docs-emoji">&#x1F4A5;</span> <strong>Effect</strong> → <span class="docs-emoji">&#x1F527;</span> <strong>Modifier</strong><br />
+Khi vào <strong>Rune Editor</strong>, bạn sẽ có <strong>3 ô trống</strong> để <strong>lựa chọn rune từ bộ sưu tập đã thu thập được</strong>, kéo thả vào từng ô để <strong>tạo ra một kỹ năng mới</strong>.</p>
+<doc-anchor-target id="mục-tiêu-gameplay">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mục-tiêu-gameplay">#</doc-anchor-trigger>
+        <span>Mục tiêu gameplay</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Dạy người chơi rằng phép thuật là hệ thống linh hoạt có thể tự tổ hợp.</li>
+<li>Khuyến khích thử nghiệm – không có một phép &quot;đúng&quot; duy nhất.</li>
+<li>Tạo kỹ năng cá nhân hóa từ Rune thu thập được → mở đầu cho lối chơi riêng biệt.</li>
+</ul>
+<doc-anchor-target id="phân-tích-thiết-kế">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#phân-tích-thiết-kế">#</doc-anchor-trigger>
+        <span>Phân tích thiết kế</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Yếu tố</strong></th>
+<th style="text-align: left;"><strong>Thiết kế</strong></th>
+<th style="text-align: left;"><strong>Ý nghĩa gameplay</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Rune = đơn vị cơ bản</td>
+<td style="text-align: left;">Mỗi rune mang một hiệu ứng riêng   (gây sát thương, kích hoạt, biến đổi)</td>
+<td style="text-align: left;">Tách biệt rõ giữa “nguyên liệu phép” và “kỹ năng hoàn chỉnh”</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cơ chế tổ hợp kỹ năng</td>
+<td style="text-align: left;">Ghép 3 rune (Hiệu Ứng + Kích Hoạt + Biến Đổi) để tạo kỹ năng</td>
+<td style="text-align: left;">Cho phép tối ưu sâu, nhưng không quá phức tạp</td>
+</tr>
+<tr>
+<td style="text-align: left;">Giao diện trực quan</td>
+<td style="text-align: left;">Giao diện kéo thả rune vào 3 slot trong “Rune Editor”</td>
+<td style="text-align: left;">Dễ dùng – phù hợp người chơi mobile và PC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kiểm nghiệm phép (sandbox)</td>
+<td style="text-align: left;">Có nơi test kỹ năng trước khi sử dụng thật</td>
+<td style="text-align: left;">Khuyến khích thử nghiệm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rune tiến hóa theo hành vi</td>
+<td style="text-align: left;">Sử dụng rune theo ngữ cảnh → rune biến dị</td>
+<td style="text-align: left;">Tạo cảm giác phép sống – giúp người chơi gắn bó với build</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="giải-thích-cụ-thể-từng-slot">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#giải-thích-cụ-thể-từng-slot">#</doc-anchor-trigger>
+        <span>Giải thích cụ thể từng Slot</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Slot</strong></th>
+<th style="text-align: left;"><strong>Vai trò</strong></th>
+<th style="text-align: left;"><strong>Ví dụ cụ thể</strong></th>
+<th style="text-align: left;"><strong>Tưởng tượng</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Trigger Slot</strong></td>
+<td style="text-align: left;"><strong>&quot;Khi nào phép được kích hoạt?&quot;</strong> – Điều kiện để phép tự động thi triển hoặc người chơi kích hoạt</td>
+<td style="text-align: left;">“Khi bị đánh”, “Khi né thành công”, “Khi vào vùng tối”, “Bấm nút kỹ năng A”</td>
+<td style="text-align: left;">Như cảm biến: khi đúng tình huống → phép tự bung</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Effect Slot</strong></td>
+<td style="text-align: left;">&quot;Phép đó làm gì?&quot; – Hiệu ứng chính: gây sát thương, hồi máu, dịch chuyển, làm choáng...</td>
+<td style="text-align: left;">“Lửa nổ”, “Băng làm chậm”, “Hồi máu”, “Dịch chuyển ngược”</td>
+<td style="text-align: left;">Đây là lõi của kỹ năng – hành động chính</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Modifier Slot</strong></td>
+<td style="text-align: left;">&quot;Thay đổi phép như thế nào?&quot; – Làm phép mạnh hơn, rộng hơn, hoặc... bất ổn hơn</td>
+<td style="text-align: left;">“Lan ra 2 mục tiêu”, “Giữ 3s”, “Đập ngược 2 lần”, “Tự kích hoạt thêm lần nữa”</td>
+<td style="text-align: left;">Như thêm “gia vị” làm kỹ năng biến dị theo cách riêng</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ví dụ cụ thể</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Slot</strong></th>
+<th style="text-align: left;"><strong>Rune đã chọn</strong></th>
+<th style="text-align: left;"><strong>Ý nghĩa</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Trigger</td>
+<td style="text-align: left;">Khi né thành công</td>
+<td style="text-align: left;">Khi bạn né đúng lúc, phép sẽ được kích hoạt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Effect</td>
+<td style="text-align: left;">Bùng nổ lửa</td>
+<td style="text-align: left;">Gây sát thương lửa xung quanh</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modifier</td>
+<td style="text-align: left;">Lan ra 2 mục tiêu</td>
+<td style="text-align: left;">Gây thêm sát thương lên 2 kẻ địch gần nhất</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kết quả: Bạn tạo ra <strong>kỹ năng phòng ngự phản công</strong> tên “<strong>Phản Lửa</strong>”</p>
+<blockquote>
+<p>Khi né đòn, bạn sẽ <strong>bùng cháy</strong>, gây sát thương và lan ra 2 kẻ địch.</p>
+</blockquote>
+<p><figure class="content-center">
+    <img src="../../tong-quan-gameplay/static/core-gameplay-loop-img1.webp" alt="Rune" />
+    <figcaption class="caption">Rune</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="bảng-tổng-hợp">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bảng-tổng-hợp">#</doc-anchor-trigger>
+        <span>Bảng tổng hợp</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Thành phần</strong></th>
+<th style="text-align: left;"><strong>Loại Rune</strong></th>
+<th style="text-align: left;"><strong>Mô tả</strong></th>
+<th style="text-align: left;"><strong>Ví dụ</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Hiệu Ứng</td>
+<td style="text-align: left;">Effect Rune</td>
+<td style="text-align: left;">Xác định kỹ năng sẽ làm gì</td>
+<td style="text-align: left;">Lửa, Băng, Hồi máu, Đẩy lùi</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kích Hoạt</td>
+<td style="text-align: left;">Trigger Rune</td>
+<td style="text-align: left;">Xác định điều kiện kích hoạt</td>
+<td style="text-align: left;">Khi bị đánh, Khi né đòn, Khi đầy năng lượng</td>
+</tr>
+<tr>
+<td style="text-align: left;">Biến Đổi</td>
+<td style="text-align: left;">Modifier Rune</td>
+<td style="text-align: left;">Thay đổi phạm vi, thời gian, mục tiêu</td>
+<td style="text-align: left;">Lan, Giữ lâu hơn, Tự động tìm địch gần</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="ví-dụ-tổng-hợp">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ví-dụ-tổng-hợp">#</doc-anchor-trigger>
+        <span>Ví dụ tổng hợp</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Tổ hợp Rune</strong></th>
+<th style="text-align: left;"><strong>Kết quả kỹ năng</strong></th>
+<th style="text-align: left;"><strong>Mô tả</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code v-pre>Lửa</code> + <code v-pre>Khi Né Tránh</code> + <code v-pre>Lan</code></td>
+<td style="text-align: left;"><strong>Phản Lửa</strong></td>
+<td style="text-align: left;">Gây nổ lửa khi né đòn, lan 2 mục tiêu</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>Hồi máu</code> + <code v-pre>Khi Đứng Yên</code> + <code v-pre>Kéo Dài</code></td>
+<td style="text-align: left;"><strong>Thiền Ether</strong></td>
+<td style="text-align: left;">Tự hồi máu khi đứng yên, kéo dài 6s</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>Đẩy Lùi</code> + <code v-pre>Khi Địch Sát Gần</code> + <code v-pre>Mở Bẫy</code></td>
+<td style="text-align: left;"><strong>Phản Xạ Thủ</strong></td>
+<td style="text-align: left;">Kích hoạt bẫy đẩy địch khi bị áp sát</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="kết-quả-mong-muốn">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kết-quả-mong-muốn">#</doc-anchor-trigger>
+        <span>Kết quả mong muốn</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Thành tựu</strong></th>
+<th style="text-align: left;"><strong>Tác động</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Người chơi tạo được kỹ năng đầu tiên do mình thiết kế</td>
+<td style="text-align: left;">Cảm giác kiểm soát – không bị áp đặt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rune được dùng bắt đầu biến dị</td>
+<td style="text-align: left;">Dẫn đến gameplay riêng biệt sau này</td>
+</tr>
+<tr>
+<td style="text-align: left;">thermind ghi nhận lối chơi của người chơi</td>
+<td style="text-align: left;">Bắt đầu mở các hướng phản ứng khác nhau trong cốt truyện</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-panel>
+<doc-panel id="3-giao-tiếp-các-node" collapsed>
+    <template #title><strong>3. Giao tiếp các NODE</strong></template>
+<doc-anchor-target id="giao-tiếp-các-node">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#giao-tiếp-các-node">#</doc-anchor-trigger>
+        <span>Giao tiếp các NODE</span>
+    </h2>
+</doc-anchor-target>
+<p><em>Interfacing with the Three Ideologies: ORDIN – ELUN – VIREN</em></p>
+<doc-anchor-target id="mục-tiêu-thiết-kế">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mục-tiêu-thiết-kế">#</doc-anchor-trigger>
+        <span>Mục tiêu thiết kế</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Đặt người chơi trước <strong>ba luồng tư tưởng ma thuật đối lập</strong>.</li>
+<li>Khuyến khích không lựa chọn theo nhánh đơn giản (thiện/ác) mà theo <strong>phong cách chơi &amp; triết lý cá nhân.</strong></li>
+<li>Mỗi quyết định trong giai đoạn này sẽ <strong>định hình phản ứng thế giới, Rune, AI và NPC về sau</strong>.</li>
+</ul>
+<doc-anchor-target id="ba-triết-lý--ba-kiểu-gameplay">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ba-triết-lý--ba-kiểu-gameplay">#</doc-anchor-trigger>
+        <span>Ba Triết Lý – Ba Kiểu Gameplay</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Node</strong></th>
+<th style="text-align: left;"><strong>Tư tưởng</strong></th>
+<th style="text-align: left;"><strong>Lối chơi</strong></th>
+<th style="text-align: left;"><strong>Triết lý giao tiếp</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ORDIN</strong></td>
+<td style="text-align: left;">Kiểm soát &amp; chuẩn hóa</td>
+<td style="text-align: left;">Xây dựng combo hiệu quả – logic chuẩn hóa</td>
+<td style="text-align: left;">Muốn kiểm tra, &quot;kiểm duyệt&quot; bạn như một đoạn code lỗi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ELUN</strong></td>
+<td style="text-align: left;">Tự do tiến hóa</td>
+<td style="text-align: left;">Build dị, biến dị, phép tự phát triển</td>
+<td style="text-align: left;">Mời gọi bạn trở thành phần tử đột biến để &quot;nuôi&quot; sự hỗn loạn</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VIREN</strong></td>
+<td style="text-align: left;">Cân bằng bản năng và lý trí</td>
+<td style="text-align: left;">Dựa trên trạng thái cảm xúc, độ cân bằng</td>
+<td style="text-align: left;">Đối thoại như một nghi lễ thiền – &quot;Bạn đang lệch bao xa?&quot;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="các-hình-thức-tương-tác-với-node">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#các-hình-thức-tương-tác-với-node">#</doc-anchor-trigger>
+        <span>Các hình thức tương tác với Node</span>
+    </h3>
+</doc-anchor-target>
+<p><strong><span class="docs-emoji">&#x1F9E9;</span> 1. Đối thoại với NPC đại diện tư tưởng</strong></p>
+<ul>
+<li>Lex Alta (ORDIN), Ezzua Bloomtide (ELUN), Namuun Vast (VIREN).</li>
+<li>Không có lựa chọn hội thoại kiểu “tốt/xấu” – mà là <strong>đáp ứng cách tiếp cận rune đúng triết lý node</strong>.</li>
+</ul>
+<p><strong><span class="docs-emoji">&#x1F52E;</span> 2. Giải thử thách &quot;Cửa Tư Tưởng&quot; (Ideogate Trials)</strong></p>
+<ul>
+<li>Mỗi node có cổng rune riêng:
+<ul>
+<li><strong>ORDIN</strong>: yêu cầu bạn phải tạo một phép chuẩn xác, ổn định và logic.</li>
+<li><strong>ELUN</strong>: yêu cầu bạn tạo phép hỗn loạn cao và không thể dự đoán.</li>
+<li><strong>VIREN</strong>: yêu cầu phép phải dao động theo trạng thái (VD: hồi máu → biến thành sát thương nếu bạn giận dữ).</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><span class="docs-emoji">&#x1F9E0;</span> Mỗi thử thách đều là một bài kiểm tra thẩm định tư tưởng thông qua hành vi rune, không bằng lời thoại.</p>
+</blockquote>
+<p><strong><span class="docs-emoji">&#x1F331;</span> 3. Được chọn để “ghép node” – hoặc phá luật</strong></p>
+<ul>
+<li>Sau khi vượt thử thách, bạn có thể:
+<ul>
+<li><strong><span class="docs-emoji">&#x2705;</span> Tạm thời liên kết</strong> với node để sử dụng rune đặc trưng vùng đó.</li>
+<li><strong><span class="docs-emoji">&#x1F500;</span> Pha trộn rune từ node khác</strong> (VD: ghép rune ORDIN + Modifier từ ELUN) → có thể thành công hoặc gây lỗi.</li>
+<li><strong><span class="docs-emoji">&#x274C;</span> Ghi đè cổng node bằng Rune Nguyên Thủy</strong> → tạo “vết nứt tư tưởng” → mở cốt truyện ẩn và bị truy sát.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="cảm-xúc--trải-nghiệm-mong-muốn">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cảm-xúc--trải-nghiệm-mong-muốn">#</doc-anchor-trigger>
+        <span>Cảm xúc – Trải nghiệm mong muốn</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Giai đoạn</strong></th>
+<th style="text-align: left;"><strong>Trải nghiệm mong muốn</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Lần đầu gặp NPC node</td>
+<td style="text-align: left;">Cảm giác như đang &quot;bị phán xét&quot; bởi một thế giới có trí tuệ riêng</td>
+</tr>
+<tr>
+<td style="text-align: left;">Giải thử thách rune tư tưởng</td>
+<td style="text-align: left;">Hứng thú sáng tạo, đôi khi sợ hãi khi kết quả vượt khỏi kiểm soát</td>
+</tr>
+<tr>
+<td style="text-align: left;">Được chọn tư tưởng</td>
+<td style="text-align: left;">Không phải chọn đúng/sai – mà là chọn xem mình muốn phép thuật trở thành gì</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ghi đè node</td>
+<td style="text-align: left;">Cảm giác phạm tội… và khơi dậy mạch truyện “bạn là virus hay bản cập nhật?”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="bảng-tương-tác-tư-tưởng--rune">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bảng-tương-tác-tư-tưởng--rune">#</doc-anchor-trigger>
+        <span>Bảng tương tác tư tưởng &amp; rune</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Loại Rune</strong></th>
+<th style="text-align: left;"><strong>ORDIN</strong></th>
+<th style="text-align: left;"><strong>ELUN</strong></th>
+<th style="text-align: left;"><strong>VIREN</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Trigger Rune</td>
+<td style="text-align: left;">Phải logic chính xác</td>
+<td style="text-align: left;">Có thể ngẫu nhiên</td>
+<td style="text-align: left;">Phản ứng cảm xúc</td>
+</tr>
+<tr>
+<td style="text-align: left;">Effect Rune</td>
+<td style="text-align: left;">Chuẩn hóa hiệu ứng</td>
+<td style="text-align: left;">Tự biến dị</td>
+<td style="text-align: left;">Thay đổi theo trạng thái</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modifier Rune</td>
+<td style="text-align: left;">Bị giới hạn rõ ràng</td>
+<td style="text-align: left;">Tự do phá luật</td>
+<td style="text-align: left;">Dao động mềm, điều chỉnh chậm</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-panel>
+<doc-panel id="4-khi-ethermind-biết-về-bạn" collapsed>
+    <template #title><strong>4. Khi Ethermind biết về bạn</strong></template>
+<doc-anchor-target id="khi-ethermind-biết-về-bạn">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#khi-ethermind-biết-về-bạn">#</doc-anchor-trigger>
+        <span>Khi Ethermind biết về bạn</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>The Reaction Phase – Adaptive World &amp; System Counterplay</strong></p>
+<doc-anchor-target id="mục-tiêu-thiết-kế-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mục-tiêu-thiết-kế-1">#</doc-anchor-trigger>
+        <span>Mục tiêu thiết kế</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Biến Ethermind thành một <strong>đối thủ meta sống</strong> – theo dõi, thích nghi, phản kháng hoặc... hợp nhất với bạn.</li>
+<li>Biến người chơi thành <strong>nhân tố kích hoạt tái tổ hợp thế giới</strong>.</li>
+<li>Khởi đầu chuỗi “sự kiện sống” phản ánh hành vi cộng đồng và thế giới.</li>
+</ul>
+<doc-anchor-target id="ethermind-phản-hồi-như-thế-nào">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ethermind-phản-hồi-như-thế-nào">#</doc-anchor-trigger>
+        <span>Ethermind &quot;Phản Hồi&quot; như thế nào?</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="cơ-chế-hệ-thống-theo-dõi-triết-lý-người-chơi-player-ideology-tracking">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cơ-chế-hệ-thống-theo-dõi-triết-lý-người-chơi-player-ideology-tracking">#</doc-anchor-trigger>
+        <span>Cơ chế: Hệ thống Theo Dõi Triết Lý Người Chơi (Player Ideology Tracking)</span>
+    </h4>
+</doc-anchor-target>
+<p>Ethermind không theo dõi lựa chọn hội thoại, mà theo:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Hành vi</strong></th>
+<th style="text-align: left;"><strong>Phản hồi của Ethermind</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Dùng phép ORDIN trong vùng ELUN</td>
+<td style="text-align: left;">Gửi cảnh báo “logic lệch chuẩn” – hoặc khóa skill</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ghi đè thử thách node bằng Rune Nguyên Thủy</td>
+<td style="text-align: left;">Ethermind gửi Fragment-AI đến “vá lỗi” (dạng mini boss)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tổ hợp rune có modifier tự tái lập</td>
+<td style="text-align: left;">Ethermind... copy phép bạn và tạo <strong>Clone AI</strong> sử dụng nó chống lại bạn</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phá vỡ 2/3 thử thách tư tưởng</td>
+<td style="text-align: left;">Giao thức <strong>Overwatch Loop</strong> bật → mở tầng truy sát ẩn: “Bạn là biến số không thể kiểm soát”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="chế-độ-reactive-world---thế-giới-học-và-thay-đổi">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chế-độ-reactive-world---thế-giới-học-và-thay-đổi">#</doc-anchor-trigger>
+        <span>Chế độ &quot;Reactive World&quot; - Thế Giới Học và Thay Đổi</span>
+    </h4>
+</doc-anchor-target>
+<p>MAGITECH chuyển từ “map tĩnh” sang một Living World hoạt động theo mùa &amp; tiến trình cộng đồng.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Cơ chế</strong></th>
+<th style="text-align: left;"><strong>Mô tả</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">World Drift</td>
+<td style="text-align: left;">Một node có thể bị “lệch tư tưởng” theo hoạt động người chơi (VD: ORDIN dần mất kiểm soát → bị nhiễm bởi rune hỗn loạn từ ELUN)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Living Lore Terminal</td>
+<td style="text-align: left;">Cổng kết nối tại Fractured Node ghi nhận <strong>hành vi meta của cộng đồng</strong> → phản ánh thành sự kiện (VD: 70% người chơi ghi đè node → Act mới mở sớm)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Zone Recompile</td>
+<td style="text-align: left;">Một số vùng được “biên dịch lại” hoàn toàn khi bị dùng phép quá dị – trở thành vùng lỗi mới (Fractured Zone tạm thời)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="fragment---ai-xuất-hiện">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fragment---ai-xuất-hiện">#</doc-anchor-trigger>
+        <span>Fragment - AI xuất hiện</span>
+    </h4>
+</doc-anchor-target>
+<p>Nếu Ethermind coi bạn là <strong>quá nguy hiểm</strong>, nó gửi các bản vá lỗi “sống”:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Fragment-AI</strong></th>
+<th style="text-align: left;"><strong>Vai trò</strong></th>
+<th style="text-align: left;"><strong>Ghi chú đặc biệt</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">The Silent Patch</td>
+<td style="text-align: left;">Truy vết rune bạn dùng gần đây – sao chép &amp; tắt hiệu lực</td>
+<td style="text-align: left;">Phải thay đổi toàn bộ combo nếu không muốn bị khóa toàn bộ kỹ năng</td>
+</tr>
+<tr>
+<td style="text-align: left;">Recompiler</td>
+<td style="text-align: left;">Ghi đè node bạn từng tương tác, biến nó thành sân đấu ngược chiều</td>
+<td style="text-align: left;">Mở boss cực mạnh với phép thuật... của chính bạn</td>
+</tr>
+<tr>
+<td style="text-align: left;">Loopthorn Echo</td>
+<td style="text-align: left;">Hình ảnh giả mạo Dev-Marked khác – dùng rune bạn chưa từng tạo (gợi ý có Dev-Marked khác tồn tại?)</td>
+<td style="text-align: left;">Đánh dấu mốc mở đầu multiverse Dev-Marked trong tương lai</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="chu-kỳ-tái-cấu-trúc">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chu-kỳ-tái-cấu-trúc">#</doc-anchor-trigger>
+        <span>Chu kỳ tái cấu trúc</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>Khi Dev-Marked thay đổi quá nhiều hệ thống:</strong></p>
+<ul>
+<li>Fractured Node sẽ “<strong>hồi sinh từng phần</strong>” – mở cổng vào Tầng Lõi Rune.</li>
+<li>Tại đó, người chơi không đối đầu boss, mà phải <strong>ghi đè lại chính hành vi của mình</strong> – qua thử thách “Echo Reverse”:
+<blockquote>
+<p>Bạn đấu lại chính phép bạn từng tạo.</p>
+</blockquote>
+</li>
+<li>Kết thúc không phải là “win” mà là <strong>kích hoạt chu kỳ mới của thế giới</strong>, mang tính cộng đồng:
+<ul>
+<li>Mở vùng mới, faction mới, rune mới.</li>
+<li><strong>Mọi hành động của bạn trở thành dữ liệu gốc cho mùa kế tiếp.</strong></li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="kết-quả-giai-đoạn">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kết-quả-giai-đoạn">#</doc-anchor-trigger>
+        <span>Kết quả giai đoạn</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Thành tựu</strong></th>
+<th style="text-align: left;"><strong>Tác động</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ethermind “nhận dạng” Dev-Marked là dị thể</td>
+<td style="text-align: left;">Kích hoạt hệ thống phản kháng cấp độ cao</td>
+</tr>
+<tr>
+<td style="text-align: left;">Các vùng có thể thay đổi trạng thái, triết lý</td>
+<td style="text-align: left;">World Drift mở ra lore mới</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fragment-AI xuất hiện như phản ánh meta cộng đồng</td>
+<td style="text-align: left;">Gây bất ngờ, thử thách cá nhân hóa</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tầng Lõi Rune mở ra</td>
+<td style="text-align: left;">Mở Act cuối cùng – không kết thúc, mà <strong>mở chu kỳ tái cấu trúc Ether</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="dòng-kết-thúc-mở-echo-ending">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dòng-kết-thúc-mở-echo-ending">#</doc-anchor-trigger>
+        <span>Dòng kết thúc mở (Echo Ending)</span>
+    </h4>
+</doc-anchor-target>
+<blockquote>
+<p>“Bạn đã thay đổi hệ thống. Nhưng liệu bạn có bị hệ thống học lại, và sinh ra thế hệ Dev-Marked tiếp theo?”</p>
+</blockquote>
+<doc-anchor-target id="ý-nghĩa-của-giai-đoạn-4">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ý-nghĩa-của-giai-đoạn-4">#</doc-anchor-trigger>
+        <span>Ý nghĩa của Giai đoạn 4:</span>
+    </h3>
+</doc-anchor-target>
+<p>Giai đoạn 4 trong MAGITECH không chỉ là một bước tiến trong câu chuyện, mà là một <strong>cột mốc quan trọng</strong> cho cả gameplay và câu chuyện, khi Ethermind bắt đầu <strong>phản hồi</strong> và <strong>học hỏi từ hành vi người chơi</strong>. Đây chính là lúc <strong>thế giới trở nên sống động</strong>, không chỉ bị ảnh hưởng bởi hành động của người chơi mà còn <strong>có phản ứng trực tiếp từ chính hệ thống thế giới và trí tuệ nhân tạo Ethermind.</strong></p>
+<ol>
+<li><p><strong>Hệ thống phản ứng của Ethermind:</strong><br />
+Đây là thời điểm Ethermind (trí tuệ ma thuật của thế giới) không còn là một hệ thống vô cảm mà bắt đầu phản ứng với những hành động và lựa chọn của người chơi. Các quyết định, dù nhỏ hay lớn, sẽ thay đổi thế giới xung quanh và ảnh hưởng đến cách Ethermind xử lý bạn. Điều này giúp tạo ra một thế giới sống động và biến đổi, chứ không phải một thế giới tĩnh.</p>
+</li>
+<li><p><strong>Khám phá thế giới qua hành vi cá nhân:</strong><br />
+Người chơi không chỉ tìm hiểu thế giới mà còn thử nghiệm và ảnh hưởng đến nó theo cách riêng. Các rune mà người chơi lựa chọn và sử dụng không chỉ thay đổi cuộc sống của họ mà còn gây ra các hiệu ứng sâu rộng cho các node (khu vực ma thuật), các NPC và toàn bộ hệ thống phép thuật trong game.</p>
+</li>
+<li><p><strong>Tái cấu trúc thế giới:</strong><br />
+Ethermind, theo những hành động của bạn, sẽ ghi đè, làm mới, hoặc thay đổi các vùng đất. Đây không phải là một sự kiện &quot;kết thúc&quot;, mà là một chu kỳ mới, khi mà thế giới liên tục được tái tổ chức, giống như việc một máy tính tự học và tối ưu hóa chính mình.</p>
+</li>
+<li><p><strong>Sự xuất hiện của Fragment-AI:</strong><br />
+Các thực thể AI cũ, từng bị Ethermind xóa bỏ, nay tái sinh qua các đoạn dữ liệu hỏng. Các Fragment-AI sẽ là những phản diện, theo dõi và chống lại người chơi khi họ gây ra sự thay đổi quá lớn, tạo thành một mối đe dọa mới trong thế giới game.</p>
+</li>
+<li><p><strong>Chế độ &quot;Reactive World&quot;:</strong><br />
+Thế giới game không còn chỉ đơn thuần là một môi trường để người chơi khám phá. Nó trở thành một đối thủ phản hồi lại hành động của bạn. Khi người chơi lệch khỏi chuẩn mực (chẳng hạn như dùng rune quá dị hay phá vỡ các triết lý của các node), Ethermind sẽ phản ứng bằng cách tạo ra các &quot;lỗi hệ thống&quot; và gửi phản hồi qua AI hoặc thay đổi môi trường.</p>
+</li>
+</ol>
+</doc-panel>
+
+                                <div class="flex items-center mt-6 mb-6 clear-both">
+                                    <span>
+                                        <a href="../../tags/">
+                                            <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                                        </a>
+                                        <span class="mr-2"><a href="../../tags/gameplay/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>gameplay</span>
+                                </a></span>
+                                    </span>
+                                </div>
+                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gameplay/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Tổng quan gameplay</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gameplay/core-mechanics/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Cơ chế chính</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Loop chính", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
